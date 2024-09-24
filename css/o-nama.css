@@ -1,9 +1,8 @@
-/* o-nama.css */
 
 /* Hero section styles */
 .hero {
     position: relative;
-    height: 50vh;
+    height: 38vh;
     overflow: hidden;
 }
 
@@ -19,19 +18,27 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .page-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 3rem;
-    text-align: center;
-    z-index: 1;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.2rem;
 }
+
+.custom-line {
+    width: 50%;
+    margin: 0.6rem auto;
+    margin-bottom: 1.3rem;
+    border: none;
+    border-style: none;                           /* Remove any borders */
+    height: 2.5px;                            /* Set the height for the line */
+    background-color: hsl(39, 86%, 53%);   /* Set the desired background color */
+    border-radius: 10px; 
+}
+
+
 
 /* About content styles */
 .about-content {
@@ -41,9 +48,9 @@
 }
 
 .section-title {
-    color: #333;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    color: hsl(352, 55%, 41%);
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
 
@@ -54,6 +61,90 @@
     text-align: justify;
     margin-bottom: 1rem;
 }
+
+#nase-vrijednosti {
+    background-color: #ffffff;
+    padding: 2rem 0;
+}
+
+
+.quote-background {
+    background-color: #f0f0f0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.quote-container {
+    width: 65%;
+    margin: 0 auto;
+    padding: 1rem;
+    padding-bottom: 2rem;
+}
+
+.quote {
+    font-family: 'Caveat', cursive;
+    line-height: normal;
+    font-size:1.3rem;
+    color: #555;
+}
+
+.quote p {
+    padding-top: 1.5rem;
+}
+
+.values-section {
+    background-color: #f8f8f8;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.values-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.value-card {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.value-card h3 {
+    color: #333;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: 555;
+}
+
+.value-card hr{
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .values-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+}
+
+
 
 /* Secondary navigation styles */
 
@@ -84,30 +175,70 @@
     margin: 0 auto;
 }
 
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-    .hero {
-        height: 30vh;
+.povijest-section {
+    background-color: #ffffff;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.povijest-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-top: 2.5rem;
+}
+
+.povijest-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.povijest-card {
+    flex-basis: calc(33.333% - 14px);
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.povijest-card-header {
+    margin-bottom: 15px;
+}
+
+.povijest-card-year {
+    color: #4a90e2;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.povijest-card-title {
+    color: #333;
+    font-size: 0.9em;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.povijest-card-content {
+    color: #666;
+    font-size: 0.8em;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .povijest-card {
+        flex-basis: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .povijest-card {
+        flex-basis: 100%;
     }
 
-    .page-title {
-        font-size: 2rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .about-text {
-        font-size: 1rem;
-    }
-
-    .secondary-nav-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .secondary-nav .nav-item {
-        margin: 0.5rem 0;
-    }
 }

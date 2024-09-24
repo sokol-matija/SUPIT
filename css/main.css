@@ -1,4 +1,4 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,21 +7,18 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #fff;
+    color: hsl(0, 0%, 0%);
     overflow-x: hidden;
 }
 
 /* Header styles */
 .main-header {
     background-color: black;
-    padding: 0.5rem 0;
-    position: fixed;
+    padding: 1rem 0;
     width: 100%;
     top: 0;
     z-index: 1000;
 }
-
-
 
 .nav-list {
     list-style-type: none;
@@ -67,4 +64,4 @@ body {
 .zaiskri {
     font-weight: bold;
     color: rgb(160, 59, 60);
-}
+} 
