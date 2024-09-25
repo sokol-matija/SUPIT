@@ -1,44 +1,83 @@
-
-/* Hero section styles */
-.hero {
+:root {
+    --primary-color: hsl(352, 55%, 41%);
+    --secondary-color: hsl(39, 86%, 53%);
+    --text-color: #333;
+    --background-color: #f8f8f8;
+  }
+  
+  /* Hero section styles */
+  .hero {
     position: relative;
     height: 38vh;
     overflow: hidden;
-}
-
-.hero-image {
+  }
+  
+  .hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.hero-overlay {
+    animation: slideDown 1s ease-out;
+  }
+  
+  .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-.page-title {
+  }
+  
+  .page-title {
     font-size: 1.2rem;
     display: flex;
     justify-content: center;
     margin-top: 1.2rem;
-}
-
-.custom-line {
+    animation: slideUp 1s ease-out;
+  }
+  
+  .custom-line {
     width: 50%;
-    margin: 0.6rem auto;
-    margin-bottom: 1.3rem;
-    border: none;
-    border-style: none;                           /* Remove any borders */
-    height: 2.5px;                            /* Set the height for the line */
-    background-color: hsl(39, 86%, 53%);   /* Set the desired background color */
-    border-radius: 10px; 
-}
+    margin: 0.6rem auto 1.3rem;
+    height: 0.15rem;
+    background-color: var(--secondary-color);
+    border-radius: 0.625rem; 
+    animation: slideUp 1s ease-out 0.5s;
+  }
 
-
+/* Animations */
+@keyframes slideDown {
+    from { 
+      transform: translateY(-100%);
+    }
+    to { 
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to { 
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 
 /* About content styles */
 .about-content {
@@ -68,6 +107,8 @@
 }
 
 
+/* Quote styles */ 
+
 .quote-background {
     background-color: #f0f0f0;
     padding-top: 2rem;
@@ -90,6 +131,18 @@
 
 .quote p {
     padding-top: 1.5rem;
+    margin-bottom: 0;
+}  
+
+.quote-container {
+    opacity: 0.01;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.quote-container.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .values-section {
@@ -147,6 +200,9 @@
 
 
 /* Secondary navigation styles */
+.secondary-nav {
+    animation: slideInFromRight 1s ease-out;
+  }
 
 .secondary-nav-list {
     display: flex;
@@ -372,4 +428,45 @@
     color: hsl(352, 55%, 41%);
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+
+  /* Responsive design */
+@media (max-width: 768px) {
+    .values-container,
+    .povijest-card {
+      flex-basis: 100%;
+    }
+  
+    .partner-list {
+      padding: 2rem 1rem;
+    }
+  
+    .partner-list li {
+      flex-basis: calc(50% - 1rem);
+    }
+  
+    .content-container {
+      flex-direction: column;
+    }
+  
+    .location-and-how-container,
+    .transport-container,
+    .mapa iframe {
+      width: 90%;
+    }
+  }
+
+/* Add prefixes for better browser support */
+.hero-image,
+.page-title,
+.custom-line,
+.secondary-nav,
+.quote-container {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
   }
